@@ -5,7 +5,6 @@ extern crate glutin_window;
 extern crate graphics;
 extern crate opengl_graphics;
 extern crate piston;
-
 extern crate rand;
 
 use piston::window::WindowSettings;
@@ -38,8 +37,15 @@ impl Game {
 	fn render(&mut self, args: &RenderArgs) {
 		use graphics;
 		const GREEN: [f32; 4] = [0.0, 1.0, 0.0, 1.0];
+		const WHITE: [f32; 4] = [1.0; 4];
 		self.gl.draw(args.viewport(), |c, gl| {
 			graphics::clear(GREEN, gl);
+//			rectangle([1.0, 0.0, 0.0, 1.0], // red
+//				[0.0, 0.0, 32.0, 32.0],
+//				c.transform,
+//				gl);
+//				 Rectangle::new([0.5, 1.0, 0.0, 0.3])
+//					.draw([50.0, 50.0, 100.0, 100.0], &draw_state, c.transform, g);
 			});
 		//self.player.render(args); // TODO remplace
 		//self.element[i].render(&mut self.gl, args, self.square_width); // TODO
